@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Consulta de Voos e Hospedagens</title>
+</head>
+<body>
+	<form action="compra.php" method="post">
+		<label>Origem<input name="origem" type="text"></label>
+		<label>Destino<input name="destino" type="text"></label>
+		<label>Data ida<input name="dataida" type="text"></label>
+		<label>Data volta<input name="datavolta" type="text"></label>
+		<label>Somente ida<input name="volta" type="radio" value="-1"></label>
+		<input type="text" name="servico" value="consultar_voo" hidden="true">
+		<button type="submit">Consultar</button>
+	</form>
+
+	<form action="compra.php" method="post">
+		<label>Destino<input name="destino" type="text"></label>
+		<label>Data entrada<input name="dataentrada" type="text"></label>
+		<label>Data saída<input name="datasaida" type="text"></label>
+		<input type="text" name="servico" value="consultar_hospedagem" hidden="true">
+		<button type="submit">Consultar</button>
+	</form>
+</body>
+</html>
