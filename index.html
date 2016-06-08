@@ -3,24 +3,91 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Consulta de Voos e Hospedagens</title>
-</head>
-<body>
-	<form action="compra.php" method="post">
-		<label>Origem<input name="origem" type="text"></label>
-		<label>Destino<input name="destino" type="text"></label>
-		<label>Data ida<input name="dataida" type="text"></label>
-		<label>Data volta<input name="datavolta" type="text"></label>
-		<label>Somente ida<input name="volta" type="radio" value="-1"></label>
-		<input type="text" name="servico" value="consultar_voo" hidden="true">
-		<button type="submit">Consultar</button>
-	</form>
 
-	<form action="compra.php" method="post">
-		<label>Destino<input name="destino" type="text"></label>
-		<label>Data entrada<input name="dataentrada" type="text"></label>
-		<label>Data saída<input name="datasaida" type="text"></label>
-		<input type="text" name="servico" value="consultar_hospedagem" hidden="true">
-		<button type="submit">Consultar</button>
-	</form>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/pikaday.css">
+</head>
+<header><a href="index.html"><img width="340" src="http://www.amanhaeuteconto.com.br/wp-content/uploads/2014/10/logo_decolar.png"></a></header>
+<body>
+
+	<div class="navigation-menu">
+  	<ul class="navigation-menu"> 
+    
+      <li class="navigation-menu-item"> 
+        <a id="hoteis" href="#"><span class="nevo-header-navigation-menu-text">Hotéis</span></a>
+      </li> 
+      
+      <li class="navigation-menu-item"> 
+        <a id="passagens" href="#"><span class="nevo-header-navigation-menu-text">Passagens</span></a> 
+      </li>  
+    </ul> 
+  </div>
+   
+   <div id="hoteis-principal" class="principal">
+     <h1 class="title">Hotéis</h1>
+     <div class="form-row">
+       <div class="form-title">
+       <form action="compra.php" method="post">
+         <div class="form-conteudo-hoteis">
+           <label class="label" for="hotel-destino"> Para onde você quer ir? </label>
+           <br><input id="hotel-destino" type="text" placeholder="Digite o seu destino..." name="destino">
+         </div>
+         <div class="form-conteudo">
+           <br><label class="label" for="passagem-origem"> Datas </label>
+           <br><input id="hotel-ida" type="text" placeholder="Digite a data de entrada..." name="dataentrada">
+         </div>
+         <div class="form-conteudo">
+           <input id="hotel-volta" type="text" placeholder="Digite a data de saida..." name="datasaida">
+         </div>
+         <input type="text" name="servico" value="consultar_hospedagem" hidden="true">
+         <div class="form-botao">
+           <br><button class="botao" type="submit">Procurar</button>
+         </div>        
+        </form>
+       </div>       
+     </div>
+   </div> 
+   
+   <div id="passagens-principal" class= "principal">
+     <h1 class="title">Passagens</h1>
+     <div class="form-row">
+       <div class="form-title">
+       <form action="compra.php" method="post">
+         <div class="form-conteudo">
+           <label class="label" for="passagem-origem"> Origem </label>
+           <br><input id="passagem-origem" type="text" placeholder="Digite sua cidade de origem..." name="origem">
+         </div>
+        
+         <div class="form-conteudo">
+           <label class="label" for="passagem-destino"> Destino </label>
+           <br><input id="passagem-destino" type="text" placeholder="Digite o seu destino..." name="destino">
+         </div>
+         
+         <div class="form-checkbox">
+           <input id="somenteIda" type="checkbox" value="-1" name="volta">
+           <label class="label" for="somenteIda">Somente Ida</label>
+         </div>
+         
+         <div class="form-conteudo">
+           <br><label class="label" for="passagem-origem"> Datas </label>
+           <br><input id="passagem-ida" type="text" placeholder="Digite a data de ida..." name="dataida">
+         </div>
+         <div class="form-conteudo">
+           <input id="passagem-volta" type="text" placeholder="Digite a data de volta..." name="datavolta">
+         </div>
+         <input type="text" name="servico" value="consultar_voo" hidden="true">
+         <div class="form-botao">
+           <br><button class="botao" type="submit">Procurar</button>
+         </div>
+         </form>
+       </div>       
+     </div>
+   </div>
+
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/pikaday.js"></script>
+	<script src="js/index.js"></script>
+
 </body>
 </html>
